@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "@ethersproject/abstract-signer": "^5.7.0",
+    "@headlessui/react": "^1.7.3",
+    "@heroicons/react": "^2.0.12",
     "ethers": "^5.7.1",
     "next": "latest",
     "react": "18.1.0",

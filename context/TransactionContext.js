@@ -15,16 +15,18 @@ if (typeof window !== "undefined") {
 const getEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
-  const transactionContract = new ethers.Contract(
+  //TODO: add contracts here
+  const myContract = new ethers.Contract(
     contractAddress,
     contractABI,
     signer
   );
 
-  return transactionContract;
+  return myContract;
 };
 
-export const TransactionProvider = ({ children }) => {
+export const ContextProvider = ({ children }) => {
+  const [pageType, setPageType] = useState("deposit");
   const [currentAccount, setCurrentAccount] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
@@ -135,14 +137,6 @@ export const TransactionProvider = ({ children }) => {
       setIsLoading(true);
 
       await transactionHash.wait();
-
-      // await saveTransaction(
-      //   transactionHash.hash,
-      //   amount,
-      //   connectedAccount,
-      //   addressTo
-      // );
-
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -165,6 +159,8 @@ export const TransactionProvider = ({ children }) => {
         isLoading,
         toggleTheme,
         darkTheme,
+        pageType,
+        setPageType,
       }}
     >
       {children}

@@ -66,10 +66,10 @@ const darkStyle = {
 };
 
 const Header = () => {
-  const [selectedNav, setSelectedNav] = useState("swap");
+  const [selectedNav, setSelectedNav] = useState("deposit");
   const [defaultStyle, setDefaultStyle] = useState(style);
   const [userName, setUserName] = useState();
-  const { connectWallet, currentAccount, toggleTheme, darkTheme } =
+  const { setPageType, connectWallet, currentAccount, toggleTheme, darkTheme } =
     useContext(TransactionContext);
 
   useEffect(() => {
@@ -102,25 +102,34 @@ const Header = () => {
         <div className={defaultStyle.navContainer}>
           <div
             className={`${defaultStyle.navItem} ${
-              selectedNav === "swap" && defaultStyle.activeNavItem
+              selectedNav === "deposit" && defaultStyle.activeNavItem
             }`}
-            onClick={() => setSelectedNav("swap")}
+            onClick={() => {
+              setSelectedNav("deposit")
+              setPageType("deposit")
+            }}
           >
             Deposit
           </div>
           <div
             className={`${defaultStyle.navItem} ${
-              selectedNav === "pool" && defaultStyle.activeNavItem
+              selectedNav === "withdraw" && defaultStyle.activeNavItem
             }`}
-            onClick={() => setSelectedNav("pool")}
+            onClick={() => {
+              setSelectedNav("withdraw")
+              setPageType("withdraw");
+            }}
           >
             Withdraw
           </div>
           <div
             className={`${defaultStyle.navItem} ${
-              selectedNav === "nft-gallery" && defaultStyle.activeNavItem
+              selectedNav === "gallery" && defaultStyle.activeNavItem
             }`}
-            onClick={() => setSelectedNav("nft-gallery")}
+            onClick={() => {
+              setSelectedNav("gallery")
+              setPageType("gallery")
+            }}
           >
             NFT Gallery
           </div>
@@ -145,7 +154,7 @@ const Header = () => {
         <div className={`${defaultStyle.button}`}>
           <div className={`${defaultStyle.buttonIconContainer} stroke-1`}>
             {darkTheme ? (
-                          <MdOutlineLightMode size={25} onClick={toggleTheme}/>
+              <MdOutlineLightMode size={25} onClick={toggleTheme} />
             ) : (
               <MdOutlineDarkMode size={25} onClick={toggleTheme} />
             )}
