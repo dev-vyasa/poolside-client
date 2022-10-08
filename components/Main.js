@@ -39,6 +39,8 @@ const style = {
   currencySelectorArrow: `text-lg`,
   confirmButton: `text-[#D13A64] border border-[#D13A64] border-2 my-2 rounded-2xl py-4 px-8 text-xl font-semibold flex items-center justify-center cursor-pointer hover:bg-gradient-to-b from-[#FC77B1] to-[#D13A64] via-[#f24b82] hover:text-white hover:-translate-y-[0.1rem] hover:transition duration-150`,
   listItem: `text-black bg-slate-600`,
+  galleryPlaceHolder: `w-full min-h-[20rem] flex justify-center items-center`,
+  galleryPlaceHolderText: `text-black inline-block align-middle py-10`,
 };
 
 const darkStyle = {
@@ -54,6 +56,8 @@ const darkStyle = {
   currencySelectorArrow: `text-lg`,
   confirmButton: `text-[#5BC0BE] border border-[#5BC0BE] border-2 my-2 rounded-2xl py-4 px-8 text-xl font-semibold flex items-center justify-center cursor-pointer hover:bg-gradient-to-b from-[#80E6D9] to-[#3CA9AA] hover:text-black hover:-translate-y-[0.1rem] hover:border-none hover:transition duration-150`,
   listItem: ``,
+  galleryPlaceHolder: `w-full min-h-[20rem] flex justify-center items-center`,
+  galleryPlaceHolderText: `text-gray-200`,
 };
 
 
@@ -104,7 +108,7 @@ const Main = () => {
               />
               <div className={defaultStyle.currencySelector}>
                 <div className={defaultStyle.currencySelectorContent}>
-                  <DropdownList list={['ETH', 'LINK']} />
+                  <DropdownList list={["ETH", "LINK"]} />
                   {/* <div className={defaultStyle.currencySelectorIcon}>
                     <Image
                       src={ethLogo}
@@ -159,8 +163,8 @@ const Main = () => {
           </div>
         ) : (
           <div>
-            <div className={`${defaultStyle.formHeader}`}>
-              <div>
+            <div className={`${defaultStyle.galleryPlaceHolder}`}>
+              <div className={`${defaultStyle.galleryPlaceHolderText}`}>
                 🚧 NFT Gallery coming up! 🚧
               </div>
             </div>
