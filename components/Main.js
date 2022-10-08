@@ -27,7 +27,7 @@ import { TransactionContext } from "../context/TransactionContext";
  */
 
 const style = {
-  wrapper: `w-screen flex items-center justify-center drop-shadow-2xl`,
+  wrapper: `mx-2 sm:m-0 w-92 sm:w-screen flex items-center justify-center drop-shadow-2xl`,
   content: `bg-[#FFFFFF] w-[30rem] rounded-3xl p-4`,
   formHeader: `px-2 flex items-center justify-between font-semibold text-xl text-slate-500`,
   transferPropContainer: `bg-[#EDF2F7] my-3 rounded-2xl p-2 text-xs  flex justify-between`,
@@ -44,7 +44,7 @@ const style = {
 };
 
 const darkStyle = {
-  wrapper: `w-screen flex items-center justify-center drop-shadow-3xl`,
+  wrapper: `mx-2 sm:m-0 w-92 sm:w-screen flex items-center justify-center drop-shadow-3xl`,
   content: `bg-[#000000] w-[30rem] rounded-3xl p-4 border-2 border-gray-800`,
   formHeader: `px-2 flex items-center justify-between font-semibold text-xl text-gray-300`,
   transferPropContainer: `bg-[#02262d] my-3 rounded-2xl p-2 text-xs  flex justify-between`,

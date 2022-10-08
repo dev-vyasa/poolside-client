@@ -24,11 +24,11 @@ import { TransactionContext } from "../context/TransactionContext";
  */
 
 const style = {
-  wrapper: `h-screen max-h-screen h-min-screen w-screen text-white select-none flex flex-col justify-between bg-gradient-to-r from-cyan-300 to-[#5BC0BE]`,
+  wrapper: `fixed bg-black w-screen h-screen max-h-screen h-min-screen min-w-screen text-white select-none flex flex-col justify-between bg-gradient-to-r from-cyan-300 to-[#5BC0BE]`,
 };
 
 const darkStyle = {
-  wrapper: `h-screen max-h-screen h-min-screen w-screen text-white select-none flex flex-col justify-between bg-gradient-to-r from-[#1C2541] to-[#0B132B]`,
+  wrapper: `fixed w-screen h-screen max-h-screen h-min-screen min-w-screen text-white select-none flex flex-col justify-between bg-gradient-to-r from-[#1C2541] to-[#0B132B]`,
 };
 
 const Home = () => {
